@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Healthcare Survey</title>
+    
+    <style>
+        /* Modern, clean, and soft aesthetic CSS */
+        :root {
+            --primary-color: #007bff;
+            --secondary-color: #28a745;
+            --text-color: #333;
+            --light-bg: #f5f7fa;
+            --card-bg: #ffffff;
+            --border-color: #ddd;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--light-bg);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            background-color: var(--card-bg);
+            padding: 45px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); 
+            width: 100%;
+            max-width: 600px;
+            text-align: center;
+        }
+
+        h1 {
+            text-align: center;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-size: 28px;
+            font-weight: 600;
+        }
+
+        p.subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 40px;
+            font-size: 16px;
+        }
+        
+        .form-group {
+            margin-bottom: 30px;
+            padding: 15px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            background-color: #fafafa;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: var(--text-color);
+            font-size: 15px;
+        }
+        
+        /* General Input Styling */
+        input[type="text"],
+        input[type="number"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            font-size: 15px;
+            box-sizing: border-box; 
+            transition: all 0.3s ease;
+            margin-top: 5px;
+        }
+
+        input[type="text"]:focus,
+        input[type="number"]:focus,
+        select:focus,
+        textarea:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.15);
+            outline: none;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        /* Checkbox Styling */
+        .check-group {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .check-group div {
+            display: flex;
+            align-items: center;
+        }
+
+        .check-group input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            margin-right: 10px;
+            accent-color: var(--primary-color);
+        }
+
+        .check-group label {
+            margin-bottom: 0;
+            font-weight: normal;
+        }
+        
+        /* Likert Scale */
+        .likert-scale {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
+        }
+
+        .likert-scale div {
+            text-align: center;
+            flex-grow: 1;
+        }
+        
+        .likert-scale input[type="radio"] {
+            margin-bottom: 5px;
+            accent-color: var(--primary-color);
+        }
+
+        .likert-scale label {
+            font-size: 12px;
+            font-weight: 500;
+            display: block;
+            color: #666;
+        }
+        
+        /* Submit Button */
+        .submit-button {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 14px 25px;
+            border: none;
+            border-radius: 8px;
+            font-size: 17px;
+            cursor: pointer;
+            width: 100%;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.1s ease;
+            margin-top: 20px;
+            box-shadow: 0 4px 10px rgba(40, 167, 69, 0.3);
+        }
+
+        .submit-button:hover {
+            background-color: #1e7e34;
+            transform: translateY(-1px);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Healthcare Access and Experience Survey</h1>
+        <p class="subtitle">Your feedback helps us understand and improve patient care.</p>
+
+        <form action="thankyou.html" method="GET"> 
+            
+            <div class="form-group">
+                <label for="zip">Zip Code (Required for regional analysis)</label>
+                <input type="text" id="zip" placeholder="e.g., 90001" pattern="[0-9]{5}" required>
+            </div>
+
+            <div class="form-group">
+                <label>Which of these areas are you currently managing? (Select all that apply)</label>
+                <div class="check-group">
+                    <div>
+                        <input type="checkbox" id="chronic-cond" name="health-focus" value="chronic">
+                        <label for="chronic-cond">A Chronic Condition (e.g., Diabetes, Asthma)</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="mental-health" name="health-focus" value="mental">
+                        <label for="mental-health">Mental or Behavioral Health</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="preventive" name="health-focus" value="preventive">
+                        <label for="preventive">General Preventive Care / Wellness Checks</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="recent-injury" name="health-focus" value="injury">
+                        <label for="recent-injury">Recovery from a recent illness or injury</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="wait-time">On average, how long do you wait for a non-urgent appointment?</label>
+                <select id="wait-time" required>
+                    <option value="">-- Select Timeframe --</option>
+                    <option value="1-week">Less than 1 week</option>
+                    <option value="1-2-weeks">1 to 2 weeks</option>
+                    <option value="3-4-weeks">3 to 4 weeks</option>
+                    <option value="1-plus-month">More than 1 month</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label>Please rate your overall satisfaction with your current healthcare provider.</label>
+                <div class="likert-scale">
+                    <div>
+                        <input type="radio" id="sat-1" name="satisfaction" value="1" required>
+                        <label for="sat-1">1 (Very Dissatisfied)</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="sat-2" name="satisfaction" value="2">
+                        <label for="sat-2">2 (Dissatisfied)</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="sat-3" name="satisfaction" value="3">
+                        <label for="sat-3">3 (Neutral)</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="sat-4" name="satisfaction" value="4">
+                        <label for="sat-4">4 (Satisfied)</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="sat-5" name="satisfaction" value="5">
+                        <label for="sat-5">5 (Very Satisfied)</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="feedback">Do you have any suggestions for improving your healthcare experience? (Optional)</label>
+                <textarea id="feedback" rows="4" placeholder="Share your thoughts on access, cost, or quality of care..."></textarea>
+            </div>
+
+            <button type="submit" class="submit-button">Submit Survey</button>
+        </form>
+    </div>
+</body>
+</html>
