@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sweet Treats Survey! 💖</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🌟 Your Dessert Wishlist! 🍬</h1>
+        <p>Tell us all your favorite sweet things! (P.S. Everything is delicious!)</p>
+
+        <form id="dessertSurveyForm">
+            <div class="form-group">
+                <label for="name">Your Cute Nickname:</label>
+                <input type="text" id="name" name="name" required placeholder="Sprinkle, Honey-Bun, etc.">
+            </div>
+
+            <div class="form-group">
+                <label for="favDessert">If you could only eat ONE dessert forever, what would it be? 🤤</label>
+                <input type="text" id="favDessert" name="favDessert" required placeholder="Chocolate Cake, Ice Cream, etc.">
+            </div>
+
+            <div class="form-group">
+                <p>Hot or Cold treats?</p>
+                <div class="radio-group">
+                    <input type="radio" id="hot" name="temperature" value="Hot & Cozy 🔥" required>
+                    <label for="hot">Hot & Cozy 🔥</label>
+                    <input type="radio" id="cold" name="temperature" value="Chilly & Refreshing ❄️">
+                    <label for="cold">Chilly & Refreshing ❄️</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="rating">How much do you love dessert? (1 = I like it, 5 = It's my whole life!)</label>
+                <select id="rating" name="rating" required>
+                    <option value="" disabled selected>Pick a score!</option>
+                    <option value="1">1 Star ⭐️</option>
+                    <option value="2">2 Stars ⭐️⭐️</option>
+                    <option value="3">3 Stars ⭐️⭐️⭐️</option>
+                    <option value="4">4 Stars ⭐️⭐️⭐️⭐️</option>
+                    <option value="5">5 Stars ⭐️⭐️⭐️⭐️⭐️</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <p>Pick all your fave sprinkles & toppings! ✨</p>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="whippedCream" name="toppings" value="Whipped Cream ☁️">
+                    <label for="whippedCream">Whipped Cream ☁️</label><br>
+                    
+                    <input type="checkbox" id="sprinkles" name="toppings" value="Colorful Sprinkles 🌈">
+                    <label for="sprinkles">Colorful Sprinkles 🌈</label><br>
+                    
+                    <input type="checkbox" id="fruit" name="toppings" value="Fresh Fruit 🍓">
+                    <label for="fruit">Fresh Fruit 🍓</label><br>
+                    
+                    <input type="checkbox" id="nuts" name="toppings" value="Crunchy Nuts 🌰">
+                    <label for="nuts">Crunchy Nuts 🌰</label>
+                </div>
+            </div>
+
+            <button type="submit" class="submit-button">Send Sweetness! 💖</button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
